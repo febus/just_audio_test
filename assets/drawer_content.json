@@ -1,0 +1,86 @@
+[
+  {
+    "foreign_text" : "'במועדון פנויים ופנויות 'דג הזהב",
+    "native_text" : "В клубе 'Золотая рыбка'",
+    "start_phrase" : 0,
+    "end_phrase" : 50 
+  },
+  {
+    "foreign_text" : "האם יש ביורוקרטיה טובה",
+    "native_text" : "Есть ли хорошая бюрократия",
+    "start_phrase" : 51,
+    "end_phrase" : 123 
+  },
+  {
+    "foreign_text" : "עבודה היא חיינו",
+    "native_text" : "Работа - наша жизнь",
+    "start_phrase" : 124,
+    "end_phrase" : 169 
+  },
+  {
+    "foreign_text" : "גם בתור יש יתרון",
+    "native_text" : "В очереди есть преимущество",
+    "start_phrase" : 170,
+    "end_phrase" : 232 
+  },
+  {
+    "foreign_text" : "על מה מדברות נשים ועל מה מדברים גברים",
+    "native_text" : "О чем разговаривают женщины и о чем - мужчины",
+    "start_phrase" : 233,
+    "end_phrase" : 326 
+  },
+  {
+    "foreign_text" : "נהניתי לנסוע ברכבת",
+    "native_text" : "Я получил удовольствие от поездки в поезде",
+    "start_phrase" : 327,
+    "end_phrase" : 399 
+  },
+  {
+    "foreign_text" : "פגישה עם העבר",
+    "native_text" : "Встреча с прошлым",
+    "start_phrase" : 400,
+    "end_phrase" : 494 
+  },
+  {
+    "foreign_text" : "אישה מודרנית",
+    "native_text" : "Современная женщина",
+    "start_phrase" : 495,
+    "end_phrase" : 575 
+  },
+  {
+    "foreign_text" : "מסיבת הפתעה",
+    "native_text" : "Вечеринка-сюрприз",
+    "start_phrase" : 576,
+    "end_phrase" : 652 
+  },
+  {
+    "foreign_text" : "הדרך ללב הגבר עוברת דרך קיבתו",
+    "native_text" : "Путь к сердцу мужчины лежит через желудок",
+    "start_phrase" : 653,
+    "end_phrase" : 744 
+  },
+  {
+    "foreign_text" : "במועדון חבר'ה לצים",
+    "native_text" : "В клубе балагуров",
+    "start_phrase" : 745,
+    "end_phrase" : 841 
+  },
+  {
+    "foreign_text" : "קניות, קניות",
+    "native_text" : "Покупки, покупки",
+    "start_phrase" : 842,
+    "end_phrase" : 947 
+  },
+  {
+    "foreign_text" : "בית חלמותיי",
+    "native_text" : "Дом моей мечты",
+    "start_phrase" : 948,
+    "end_phrase" : 1048 
+  },
+  {
+    "foreign_text" : "המיליונר",
+    "native_text" : "Миллионер",
+    "start_phrase" : 1049,
+    "end_phrase" : 1191 
+  }
+]

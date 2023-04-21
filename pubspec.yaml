@@ -1,0 +1,323 @@
+name: just_audio_test
+description: A new Flutter project.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  just_audio: ^0.9.18
+  rxdart: ^0.27.3
+  tuple: ^2.0.0
+  visibility_detector: ^0.2.2
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/title.png
+    - assets/drawer_content.json
+    - assets/audio/
+    - assets/lim/0001/
+    - assets/lim/0002/
+    - assets/lim/0003/
+    - assets/lim/0004/
+    - assets/lim/0005/
+    - assets/lim/0006/
+    - assets/lim/0007/
+    - assets/lim/0008/
+    - assets/lim/0009/
+    - assets/lim/0010/
+    - assets/lim/0011/
+    - assets/lim/0012/
+    - assets/lim/0013/
+    - assets/lim/0014/
+    - assets/lim/0015/
+    - assets/lim/0016/
+    - assets/lim/0017/
+    - assets/lim/0018/
+    - assets/lim/0019/
+    - assets/lim/0020/
+    - assets/lim/0021/
+    - assets/lim/0022/
+    - assets/lim/0023/
+    - assets/lim/0024/
+    - assets/lim/0025/
+    - assets/lim/0026/
+    - assets/lim/0027/
+    - assets/lim/0028/
+    - assets/lim/0029/
+    - assets/lim/0030/
+    - assets/lim/0031/
+    - assets/lim/0032/
+    - assets/lim/0033/
+    - assets/lim/0034/
+    - assets/lim/0035/
+    - assets/lim/0036/
+    - assets/lim/0037/
+    - assets/lim/0038/
+    - assets/lim/0039/
+    - assets/lim/0040/
+    - assets/lim/0041/
+    - assets/lim/0042/
+    - assets/lim/0043/
+    - assets/lim/0044/
+    - assets/lim/0045/
+    - assets/lim/0046/
+    - assets/lim/0047/
+    - assets/lim/0048/
+    - assets/lim/0049/
+    - assets/lim/0050/
+    - assets/lim/0051/
+    - assets/lim/0052/
+    - assets/lim/0053/
+    - assets/lim/0054/
+    - assets/lim/0055/
+    - assets/lim/0056/
+    - assets/lim/0057/
+    - assets/lim/0058/
+    - assets/lim/0059/
+    - assets/lim/0060/
+    - assets/lim/0061/
+    - assets/lim/0062/
+    - assets/lim/0063/
+    - assets/lim/0064/
+    - assets/lim/0065/
+    - assets/lim/0066/
+    - assets/lim/0067/
+    - assets/lim/0068/
+    - assets/lim/0069/
+    - assets/lim/0070/
+    - assets/lim/0071/
+    - assets/lim/0072/
+    - assets/lim/0073/
+    - assets/lim/0074/
+    - assets/lim/0075/
+    - assets/lim/0076/
+    - assets/lim/0077/
+    - assets/lim/0078/
+    - assets/lim/0079/
+    - assets/lim/0080/
+    - assets/lim/0081/
+    - assets/lim/0082/
+    - assets/lim/0083/
+    - assets/lim/0084/
+    - assets/lim/0085/
+    - assets/lim/0086/
+    - assets/lim/0087/
+    - assets/lim/0088/
+    - assets/lim/0089/
+    - assets/lim/0090/
+    - assets/lim/0091/
+    - assets/lim/0092/
+    - assets/lim/0093/
+    - assets/lim/0094/
+    - assets/lim/0095/
+    - assets/lim/0096/
+    - assets/lim/0097/
+    - assets/lim/0098/
+    - assets/lim/0099/
+    - assets/lim/0100/
+    - assets/lim/0101/
+    - assets/lim/0102/
+    - assets/lim/0103/
+    - assets/lim/0104/
+    - assets/lim/0105/
+    - assets/lim/0106/
+    - assets/lim/0107/
+    - assets/lim/0108/
+    - assets/lim/0109/
+    - assets/lim/0110/
+    - assets/lim/0111/
+    - assets/lim/0112/
+    - assets/lim/0113/
+    - assets/lim/0114/
+    - assets/lim/0115/
+    - assets/lim/0116/
+    - assets/lim/0117/
+    - assets/lim/0118/
+    - assets/lim/0119/
+    - assets/lim/0120/
+    - assets/lim/0121/
+    - assets/lim/0122/
+    - assets/lim/0123/
+    - assets/lim/0124/
+    - assets/lim/0125/
+    - assets/lim/0126/
+    - assets/lim/0127/
+    - assets/lim/0128/
+    - assets/lim/0129/
+    - assets/lim/0130/
+    - assets/lim/0131/
+    - assets/lim/0132/
+    - assets/lim/0133/
+    - assets/lim/0134/
+    - assets/lim/0135/
+    - assets/lim/0136/
+    - assets/lim/0137/
+    - assets/lim/0138/
+    - assets/lim/0139/
+    - assets/lim/0140/
+    - assets/lim/0141/
+    - assets/lim/0142/
+    - assets/lim/0143/
+    - assets/lim/0144/
+    - assets/lim/0145/
+    - assets/lim/0146/
+    - assets/lim/0147/
+    - assets/lim/0148/
+    - assets/lim/0149/
+    - assets/lim/0150/
+    - assets/lim/0151/
+    - assets/lim/0152/
+    - assets/lim/0153/
+    - assets/lim/0154/
+    - assets/lim/0155/
+    - assets/lim/0156/
+    - assets/lim/0157/
+    - assets/lim/0158/
+    - assets/lim/0159/
+    - assets/lim/0160/
+    - assets/lim/0161/
+    - assets/lim/0162/
+    - assets/lim/0163/
+    - assets/lim/0164/
+    - assets/lim/0165/
+    - assets/lim/0166/
+    - assets/lim/0167/
+    - assets/lim/0168/
+    - assets/lim/0169/
+    - assets/lim/0170/
+    - assets/lim/0171/
+    - assets/lim/0172/
+    - assets/lim/0173/
+    - assets/lim/0174/
+    - assets/lim/0175/
+    - assets/lim/0176/
+    - assets/lim/0177/
+    - assets/lim/0178/
+    - assets/lim/0179/
+    - assets/lim/0180/
+    - assets/lim/0181/
+    - assets/lim/0182/
+    - assets/lim/0183/
+    - assets/lim/0184/
+    - assets/lim/0185/
+    - assets/lim/0186/
+    - assets/lim/0187/
+    - assets/lim/0188/
+    - assets/lim/0189/
+    - assets/lim/0190/
+    - assets/lim/0191/
+    - assets/lim/0192/
+    - assets/lim/0193/
+    - assets/lim/0194/
+    - assets/lim/0195/
+    - assets/lim/0196/
+    - assets/lim/0197/
+    - assets/lim/0198/
+    - assets/lim/0199/
+    - assets/lim/0200/
+    - assets/lim/0201/
+    - assets/lim/0202/
+    - assets/lim/0203/
+    - assets/lim/0204/
+    - assets/lim/0205/
+    - assets/lim/0206/
+    - assets/lim/0207/
+    - assets/lim/0208/
+    - assets/lim/0209/
+    - assets/lim/0210/
+    - assets/lim/0211/
+    - assets/lim/0212/
+    - assets/lim/0213/
+    - assets/lim/0214/
+    - assets/lim/0215/
+    - assets/lim/0216/
+    - assets/lim/0217/
+    - assets/lim/0218/
+    - assets/lim/0219/
+    - assets/lim/0220/
+    - assets/lim/0221/
+    - assets/lim/0222/
+    - assets/lim/0223/
+    - assets/lim/0224/
+    - assets/lim/0225/
+    - assets/lim/0226/
+    - assets/lim/0227/
+    - assets/lim/0228/
+    - assets/lim/0229/
+    - assets/lim/0230/
+    - assets/lim/0231/
+    - assets/lim/0232/
+    - assets/lim/0233/
+    - assets/lim/0234/
+    - assets/lim/0235/
+    - assets/lim/0236/
+    - assets/lim/0237/
+    - assets/lim/0238/
+    - assets/lim/0239/
+    - assets/lim/0240/
+    - assets/lim/0241/
+    - assets/lim/0242/
+    - assets/lim/0243/
+  #   - images/a_dot_ham.jpeg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
