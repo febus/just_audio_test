@@ -7,9 +7,9 @@ class LimPhrase {
 
   // ignore: sort_constructors_first
   LimPhrase(
-      {this.audioFileName,
-      this.nativeText,
-      this.foreignText,
-      this.startOffsetInMilliseconds,
-      this.endOffsetInMilliseconds});
+      {required this.audioFileName,
+      required this.nativeText,
+      required this.foreignText,
+      required this.startOffsetInMilliseconds,
+      required this.endOffsetInMilliseconds});
 }

@@ -61,7 +61,7 @@ class LimBloc {
   void dispose() {
     _inputEventController.close();
     _outputStateController.close();
-    _player.dispose();
+    _player?.dispose();
   }
 
   void initState() {
@@ -86,16 +86,16 @@ class LimBloc {
     final AudioSession session = await AudioSession.instance;
     await session.configure(const AudioSessionConfiguration.speech());
     // Listen to errors during playback.
-    _player.playbackEventStream.listen((PlaybackEvent event) {},
+    _player?.playbackEventStream.listen((PlaybackEvent event) {},
         onError: (Object e, StackTrace stackTrace) {
       print('A stream error occurred: $e');
     });
 
-    _player.currentIndexStream.listen((int index) async {
-      if (index >= 0 &&
+    _player?.currentIndexStream.listen((int? index) async {
+      if (index != null && index >= 0 &&
           index < _visibilityMap.length &&
-          _visibilityMap[index] < 1.0) {
-        await ensureCurrentVisible(_chapterGlobalKeys[index].currentContext);
+          _visibilityMap[index]! < 1.0) {
+        await ensureCurrentVisible(_chapterGlobalKeys[index].currentContext!);
       }
       // if (index % 9 != 0) {
       //   return;
@@ -107,7 +107,7 @@ class LimBloc {
   Future<void> ensureCurrentVisible(BuildContext currentContext) async {
     if (currentContext != null) {
       await _scrollController.position.ensureVisible(
-        currentContext.findRenderObject(),
+        currentContext.findRenderObject()!,
         alignment: 0.02,
         duration: const Duration(milliseconds: 100),
       );
@@ -115,7 +115,7 @@ class LimBloc {
   }
 
   Future<void> loadDrawerContent() async {
-    await _drawerContent.load();
+    await _drawerContent?.load();
   }
 
   Future<ConcatenatingAudioSource> loadAudioSource(bool forceReload,
@@ -137,7 +137,7 @@ class LimBloc {
   }
 
   Iterable<ListTile> buildListTiles() {
-    return _drawerContent.buildListTiles();
+    return _drawerContent!.buildListTiles()!;
   }
 
   void processSelectedChapterState(
@@ -154,15 +154,15 @@ class LimBloc {
       final ConcatenatingAudioSource chapterAudioSrc =
           ConcatenatingAudioSource(children: chapterAudioSources);
 
-      if (_player.playing) {
-        _player.pause().then((_) => _player
-            .setAudioSource(chapterAudioSrc)
-            .then((_) => _player.seek(Duration.zero, index: 0).then((_) =>
-                ensureCurrentVisible(_chapterGlobalKeys[0].currentContext)
-                    .then((_) => _player.play()))));
+      if (_player!.playing) {
+        _player?.pause().then((_) => _player
+            !.setAudioSource(chapterAudioSrc)
+            .then((_) => _player!.seek(Duration.zero, index: 0).then((_) =>
+                ensureCurrentVisible(_chapterGlobalKeys[0].currentContext!)
+                    .then((_) => _player!.play()))));
       } else {
-        _player.setAudioSource(chapterAudioSrc).then(
-            (_) => ensureCurrentVisible(_chapterGlobalKeys[0].currentContext));
+        _player!.setAudioSource(chapterAudioSrc).then(
+            (_) => ensureCurrentVisible(_chapterGlobalKeys[0].currentContext!));
       }
     } catch (e) {
       // Catch load errors: 404, invalid url ...
@@ -180,18 +180,18 @@ class LimBloc {
   List<LimPhrase> get chapterPhrases => _chapterPhrases;
   List<GlobalKey> get globalKeys => _globalKeys;
   List<GlobalKey> get chapterGlobalKeys => _chapterGlobalKeys;
-  AudioPlayer get player => _player;
+  AudioPlayer? get player => _player;
   ScrollController get scrollController => _scrollController;
 
-  AudioPlayer _player;
+  AudioPlayer? _player;
   final AbstractLimPhrasesRepository _limPhrasesRepository =
       AssetsLimPhrasesRepository();
 
-  List<LimPhrase> _limPhrases;
+  List<LimPhrase> _limPhrases = <LimPhrase>[];
 
   final AudioSourceRepository _audioSourceRepository = AudioSourceRepository();
 
-  DrawerContent _drawerContent;
+  DrawerContent? _drawerContent;
 
   final List<GlobalKey> _globalKeys = <GlobalKey>[];
   List<GlobalKey> _chapterGlobalKeys = <GlobalKey>[];

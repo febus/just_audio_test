@@ -9,17 +9,17 @@ import 'package:just_audio_test/model/lim_part.dart';
 import 'package:just_audio_test/services/abstract_lim_phrases_repository.dart';
 
 class AssetsLimPhrasesRepository extends AbstractLimPhrasesRepository {
-  static List<LimPhrase> _limPhrasesCache;
+  static List<LimPhrase>? _limPhrasesCache;
   @override
   Future<List<LimPhrase>> loadLimPhrases(bool forceReload,
       [int start = -1, int end = -1]) async {
     if (_limPhrasesCache != null &&
-        _limPhrasesCache.isNotEmpty &&
+        _limPhrasesCache!.isNotEmpty &&
         !forceReload) {
-      return _limPhrasesCache;
+      return _limPhrasesCache!;
     }
     if (_limPhrasesCache != null) {
-      _limPhrasesCache.clear();
+      _limPhrasesCache?.clear();
     }
     final String assetsFile = await rootBundle.loadString('AssetManifest.json');
     final Map<String, dynamic> manifestMap =
@@ -31,9 +31,9 @@ class AssetsLimPhrasesRepository extends AbstractLimPhrasesRepository {
 //https://stackoverflow.com/questions/51106934/my-async-call-is-returning-before-list-is-populated-in-foreach-loop
     final List<LimPhrase> limPhrases = <LimPhrase>[];
     //const int iChapter = 0;
-    int lineNo = 0;
+    //int lineNo = 0;
     for (final String folder in limChapters.keys) {
-      final List<String> files = limChapters[folder];
+      final List<String> files = limChapters[folder]!;
       final String foreignFileName =
           files.firstWhere((String element) => element.contains('Eng.lim'));
       final List<String> foreignLines =

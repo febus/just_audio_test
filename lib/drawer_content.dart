@@ -8,8 +8,8 @@ import 'model/drawer_chapter.dart';
 class DrawerContent {
   DrawerContent(this._limBloc);
 
-  List<DrawerChapter> _chapters;
-  final LimBloc _limBloc;
+  late List<DrawerChapter> _chapters;
+  late final LimBloc _limBloc;
 
   Future<void> load() async {
     _chapters = <DrawerChapter>[];

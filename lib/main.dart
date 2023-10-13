@@ -29,7 +29,7 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-  List<LimPhrase> limPhrases;
+  List<LimPhrase>? limPhrases;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -46,13 +46,13 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'С шуткой о серьезном'),
+      home: MyHomePage(title: 'С шуткой о серьезном', key: null,),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final Icon _playIcon = const Icon(Icons.play_circle_outline);
   final Icon _pauseIcon = const Icon(Icons.pause_circle_outline);
 
-  AudioPlayer get _player => _limBloc.player;
+  AudioPlayer get _player => _limBloc.player!;
   //List<LimPhrase> get _chapterPhrases => _limBloc.chapterPhrases;
   //List<GlobalKey> get _chapterGlobalKeys => _limBloc.globalKeys;
 
@@ -118,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   if (blocSnapshot.data is SelectedChapterState) {
                     _limBloc.processSelectedChapterState(
                         blocSnapshot.data as SelectedChapterState,
-                        snapshot.data);
+                        snapshot.data!);
                   }
                   return SafeArea(
                     child: Scaffold(
@@ -136,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     image:
                                         AssetImage('assets/images/title.png'),
                                     fit: BoxFit.fill),
-                              ),
+                              ), child: null,
                               // decoration: const BoxDecoration(
                               //   color: Colors.blue,
                               // ),
@@ -179,12 +179,12 @@ class _MyHomePageState extends State<MyHomePage> {
                             itemBuilder: (BuildContext context, int index) {
                               final LimPhrase phrase =
                                   _limBloc.chapterPhrases[index];
-                              return StreamBuilder<int>(
+                              return StreamBuilder<int?>(
                                   stream: _player.currentIndexStream,
                                   builder: (BuildContext strmContext,
-                                      AsyncSnapshot<int> snapshot) {
+                                      AsyncSnapshot<int?> snapshot) {
                                     final int currentlyPlayingIndex =
-                                        snapshot.data;
+                                        snapshot.data ?? 0;
 
                                     return buildInkWell(
                                         index, phrase, currentlyPlayingIndex);
@@ -208,7 +208,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void onVisibilityChanged(VisibilityInfo vi) {
     final ValueKey<String> vkey = vi.key as ValueKey<String>;
-    final int index = int.tryParse(vkey.value.substring(1));
+    final int index = int.tryParse(vkey.value.substring(1))!;
     _limBloc.setVisibilityFraction(index, vi.visibleFraction);
   }
 

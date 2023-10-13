@@ -1,6 +1,6 @@
 class DrawerChapter {
   DrawerChapter(
-      {this.foreignText, this.nativeText, this.startPhrase, this.endPhrase});
+      {required this.foreignText, required this.nativeText, required this.startPhrase, required this.endPhrase});
 
   factory DrawerChapter.fromJson(Map<String, dynamic> parsedJson) {
     return DrawerChapter(
